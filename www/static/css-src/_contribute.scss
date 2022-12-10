@@ -1,0 +1,149 @@
+.contribute-help {
+    .sprite_img {
+        position:relative;
+        left: 0px;
+        margin: 0;
+        padding: 0;
+        top:0;
+        width: 85px;
+        height: 85px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .report-bug-icon {
+        @extend .sprite_img;
+        height:1em;
+        width:1em;
+        background-image: url("{{ site.baseurl }}/static/img/bug_icon.svg");
+        background-size: 2em 1em;
+        display: inline-block;
+    }
+
+    a:hover .report-bug-icon {
+        background-position: -1em 0;
+    }
+
+    .list {
+        padding:0;
+    }
+
+    .list li {
+        background:$gray-10;
+        position: relative;
+        list-style: none;
+        margin-bottom: 16px;
+
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
+    }
+
+    .well {
+        .issue-links {
+            li {
+                margin: 10px 0px;
+                a {
+                    color: $brand-primary;
+                    display: inline;
+                    padding: 0px;
+                    &:hover {
+                        color: $brand-primary-darker;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .platforms-list {
+        li {
+            a {
+                float: right;
+                -webkit-transition: background 0.25s linear;
+                -moz-transition: background 0.25s linear;
+                transition: background 0.25s linear;
+                width: 36px;
+                background: url("{{ site.baseurl }}/static/img/github-mark.png") no-repeat;
+                background-color: #4cc2e4;
+                background-size: 24px;
+                background-position: center;
+                height: 36px;
+            }
+
+            a.link-apache {
+                background-position: 2px -94px;
+                margin-right: 3px;
+            }
+
+            .project-label {
+                margin: 8px -8px 8px 8px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        @media (min-width: $screen-sm-min) {
+            li.first {
+                a.link-apache {
+                    width: 115px;
+                }
+
+                .project-label {
+                    width: 35%;
+                }
+
+                .project-links {
+                    width: 65%;
+                }
+            }
+        }
+
+        @media (max-width: $screen-xs-max) {
+            li {
+                a {
+                    display: inline-block;
+                    float: none;
+                }
+
+                a.link-apache {
+                    background-position: 2px -94px;
+                    width: 108px;
+                    margin-right: 3px;
+                }
+
+                .project-label{
+                    margin: 0px -8px 0px 8px;
+                    text-align: center;
+                    padding: 12px;
+                }
+
+                .link-box {
+                    text-align: center;
+                    background-color: $brand-primary;
+                    padding-top: 4px;
+                }
+            }
+        }
+    }
+
+    .contribute-get-started-steps {
+        padding-left: 17px;
+        counter-reset: contribute-steps-counter;
+        > li {
+            margin-bottom:.5em;
+        }
+    }
+
+    table {
+        @extend .table;
+        @extend .table-bordered;
+    }
+}
+
+.team-member-profile a + a:before {
+    content: '\2022';
+    color: initial;
+    display: inline-block;
+    padding: 0 0.5em 0 0.25em;
+}
